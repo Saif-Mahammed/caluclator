@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #2e3192, #1bffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1.8rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15),
+    0 0 14px rgba(255, 255, 255, 0.5) inset;
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2),
+    0 0 16px rgba(255, 255, 255, 0.8) inset;
+}
+
+.calculator-grid > button.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: span 4;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 1.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15),
+    0 0 14px rgba(255, 255, 255, 0.5) inset;
+}
+
+.output .previous-operand,
+.output .current-operand {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.output .current-operand {
+  font-size: 2.8rem;
+}
